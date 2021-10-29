@@ -22,7 +22,7 @@ This was my first time using Node.Js in a project, so everything for me was a gr
 * Flexbox
 * Responsive Website
 
-## Coming Soon 🧩
+## Coming Soon 🔍
 
 * More Pages of news
 * Interaction with the login page
