@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema e Tv</title>
+
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- GENERAL RULES -->
+    <link rel="stylesheet" href="../Styles/general-rules.css">
+    
+    <!-- BOX-ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../Styles/search.css">
+</head>
+<body class="series">
+    <header>
+        <h2>
+            <a href="/">NAPED</a>
+        </h2>
+
+        <nav class="icon"> 
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </nav>
+
+        <nav  id="nav">
+            <ul>
+                <li>
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/cinema-tv" id="series">
+                        Cinema e TV 
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/curiosities" id="movies">
+                        Curiosidades
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/animes" id="animes">
+                        Animes
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/games" id="games">
+                        Games
+                    </a>
+                </li>
+            
+                <div class="btn">
+                    <a href="/login">
+                        Minha conta
+                    </a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main grid pages">
+        <div class="img-container img1">
+            <img src="https://assets.b9.com.br/wp-content/uploads/2019/05/netflix-library-1280x720.jpg" alt="">
+            
+            <div class="text">
+                <h2>
+                    
+                    Cinema e Tv
+                </h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere mollitia, tenetur expedita nesciunt animi sit, dicta iure ex
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Quer ajuda na procura? Pesquise aqui">
+        
+        <i class='bx bx-search-alt-2' ></i>
+    </div>
+
+    <div class="recents">
+        <div class="cards grid">
+        <% for(let i = 0; i < 12; i++) {%>
+            <div class="card">
+                <div class="img-container" data-url="<%- tv2Link.eq(i).attr('href').substring(26)%>">
+                    <img src="<%- tv2Src.eq(i).data('src') %>" alt="">
+                    
+                    <div class="text">
+                        <div class="button">
+                            Ler noticia
+                        </div>
+                        <p>
+                            <%- tv2Text.eq(i).text() %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li>
+                <i class='bx bx-chevron-left'></i>
+            </li>
+            
+            <li>
+                1
+            </li>
+            
+            <li>
+                2
+            </li>
+            
+            <li>
+                ...
+            </li>
+            
+            <li>
+                9
+            </li>
+            
+            <li>
+                10
+            </li>
+            
+            <li>
+                <i class='bx bx-chevron-right'></i>
+            </li>
+        </ul>
+    </nav>
+
+    <footer>
+        <h2>
+            Naped
+        </h2>
+
+        <p>
+            Design feito por <a href="https://www.linkedin.com/in/iuricode/" target="_blank">Iuri Code</a>. Código feito por <a href="https://www.linkedin.com/in/samuel-oliveira-de-ara%C3%BAjo-473254191/" target="_blank">Samuel Oliveira</a>
+          </p>
+    </footer>
+
+    <!-- GENERAL SCRIPT -->
+    <script src="../JS/script.js"></script>
+</body>
+</html>

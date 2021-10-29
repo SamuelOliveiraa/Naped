@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>News</title>
+        
+        <!--JQUERY-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!-- BOX ICONS -->
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- GENERAL RULES -->
+        <link rel="stylesheet" href="/Styles/general-rules.css">
+        
+        <!-- STYLES -->
+        <link rel="stylesheet" href="/Styles/news.css">
+    </head>
+    <body>
+        <header>
+        <h2>
+            <a href="/">NAPED</a>
+        </h2>
+
+        <nav class="icon"> 
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </nav>
+
+        <nav  id="nav">
+            <ul>
+                <li>
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/cinema-tv" id="series">
+                        Cinema e TV 
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/curiosities" id="movies">
+                        Curiosidades
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/animes" id="animes">
+                        Animes
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/games" id="games">
+                        Games
+                    </a>
+                </li>
+            
+                <div class="btn">
+                    <a href="/login">
+                        Minha conta
+                    </a>
+                </div>
+            </ul>
+        </nav>
+        </header>
+
+        <div id="news">
+                    <h2>
+                        <%- urlTitle.text() %>
+                    </h2>
+
+                    <div class="info">
+                        <span>
+                            <i class='bx bx-pencil'></i>
+                            <%- urlAuthor.text() %> 
+                        </span>
+                        <span>
+                            <i class='bx bxs-calendar'></i>
+                            <%- urlData.text() %> 
+                        </span>
+                    </div>
+            
+                    <div class="img-container">
+                        <img src="<%- urlSrc.data('src') %>" alt="Kratos">
+                    </div> 
+
+                    <% if($('.article-post-content').find('div a')){$('div > a').remove()} %> 
+                    <% if($('.article-post-content').find('ul')){$('ul').remove()} %>
+                    
+                    <% for(let i = 0; i < $('.article-post-content img').length; i++){ %>
+                        <% if ($('.article-post-content img').eq(i).attr("data-src")) { %>
+                            <% $('.article-post-content img').eq(i).prop('width', null) %>
+                            <% $('.article-post-content img').eq(i).prop('height', null) %>
+                            <% $('.article-post-content img').eq(i).attr('src', $('.article-post-content img').eq(i).data('src'))%> 
+                        <% } %> 
+                    <% } %> 
+                    <% for(let i = 0; i < $('.article-post-content iframe').length; i++){ %> 
+                        <% $('.article-post-content iframe').eq(i).prop('width', null) %>
+                        <% $('.article-post-content iframe').eq(i).prop('height', null) %>
+                        <% $('.article-post-content iframe').eq(i).attr('src', $('.article-post-content iframe').eq(i).data('src')) %>
+                    <% } %> 
+                    
+                    <% $('.article-post-content').children().last().remove()%>  
+                    <%- url %>   
+        </div>
+
+        <div class="recents">
+            <h2>Noticias mais recentes</h2>
+    
+            <div class="cards grid">
+            <% for(let i = 3; i < 6; i++) {%>
+              <div class="card">
+                <div class="img-container" data-url="<%- animes2Link.eq(i).attr('href').substring(26)%>">
+                  <img src="<%- animes2Src.eq(i).data('src') %>" alt="" />
+    
+                  <div class="text">
+                    <div class="button">
+                      Ler noticia
+                    </div>
+                    
+                    <p>
+                      <%- animes2Text.eq(i).text() %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+            <% for(let i = 3; i < 6; i++) {%>
+              <div class="card">
+                <div class="img-container" data-url="<%- curiosities2Link.eq(i).attr('href').substring(26)%>">
+                  <img src="<%- curiosities2Src.eq(i).data('src') %>" alt="" />
+    
+                  <div class="text">
+                    <div class="button">
+                      Ler noticia
+                    </div>
+                    
+                    <p>
+                      <%- curiosities2Text.eq(i).text() %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+            </div>
+        </div>
+
+        <footer>
+            <h2>
+                Naped
+            </h2>
+
+            <p>
+                Design feito por <a href="https://www.linkedin.com/in/iuricode/" target="_blank">Iuri Code</a>. Código feito por <a href="https://www.linkedin.com/in/samuel-oliveira-de-ara%C3%BAjo-473254191/" target="_blank">Samuel Oliveira</a>
+              </p>
+        </footer>
+
+        <script src="/JS/script.js" defer></script>
+    </body>
+</html>

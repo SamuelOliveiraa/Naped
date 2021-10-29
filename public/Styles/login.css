@@ -1,0 +1,89 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container .content{
+    max-width: 310px;
+    border: 1px solid var(--purple);
+    padding: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+}
+.container .content h2{
+    font-size: 20px;
+    color: var(--purple);
+}
+.container .content form{
+    margin: 1.5rem 0;
+}
+.container .content input{
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+.container .content input[type="submit"]{
+    background-color: var(--purple);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1px solid transparent;
+}
+.container .content input[type="submit"]:hover{
+    background-color: transparent;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    cursor: pointer;
+}
+.container .content .icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    font-size: 25px;
+}
+.container .content .icon-container .icon{
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.container .content .icon-container .icon:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.container .content .icon-container .icon + .icon{
+    margin-left: 0.7rem;
+}
+.container .content .icon-container .facebook{
+    background-color: #425893;
+}
+.container .content .icon-container .twitter{
+    background-color: #4BA1E8;
+}
+.container .content .icon-container .google{
+    background-color: #D75242;
+}
+.container .content span{
+    display: block;
+    font-size: 0.8rem;
+    margin: 1rem 0;
+}
+.container .content span:last-child{
+    margin-top: 3rem;
+}
+.container .content span a{
+    color: var(--purple);
+}
+.container .content span a:hover{
+    text-decoration: underline;
+}
+footer{
+    margin: 0;
+}

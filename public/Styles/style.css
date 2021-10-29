@@ -1,0 +1,229 @@
+/* CONTENT */
+.content{
+    width: 100%;
+    margin-top: 4rem;
+}
+.content h1{
+    max-width: 300px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.content p{
+    max-width: 650px;
+    color: var(--gray);
+}
+
+/* MAIN */
+.main{
+    grid-template-areas: 
+    "img1"
+    "img2"
+    "img3";
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+.main .img-container{
+    min-height: 300px;
+}
+.main .img1{
+    grid-area: img1;
+}
+.main .img2{
+    grid-area: img2;
+}
+.main .img3{
+    grid-area: img3;
+}
+.main .img-container .text p{
+    color: var(--white);
+}
+.main .img-container .text .button{
+    width: 100px;
+}
+
+/* SCROLL */
+.scroll{
+    margin: 0 auto;
+    margin-top: 3rem;
+    max-width: 550px;
+    max-height: 400px;
+    overflow-y: scroll;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    scroll-snap-type: y mandatory;
+}
+.scroll .card{
+    scroll-snap-align: start;
+    cursor: pointer;
+}
+.scroll .card .text p{
+    margin: 0.5rem 0;
+    margin-bottom: 1rem;
+}
+.scroll .card .img-container{
+    min-height: 250px;
+    margin: 1rem 0;
+}
+.scroll .card .img-container .button{
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
+.main, .scroll, .recents, .img-container, img{
+    width: 100%;
+}
+
+/* SWIPER */
+.swiper{
+    width: 90vw;
+    max-width: 500px;
+    margin: 2rem auto;
+    position: relative;
+}
+@keyframes arrow{
+    from{
+        right: 30px;
+    }
+    to{
+        right: 20px;
+    }
+}
+.swiper::after{
+    content: '→';
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    color: var(--purple);
+    animation: arrow .5s ease-in 0s infinite alternate;
+}
+
+.swiper .wrapper{
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    margin-top: 1.7rem;
+    overflow-x: auto;
+    margin: 0 auto;
+}
+.swiper .wrapper .img-container{
+    object-fit: cover;
+    flex: none;
+    scroll-snap-align: center;
+    width: 101%;
+    height: 100%;
+}
+
+/* RECENTS */
+
+.recents .cards .img-container,
+.recents .cards .img-container .text{
+    min-height: 250px;
+}
+
+@media screen and (min-width: 600px) {
+    .main{
+        grid-template-areas: 
+        "img1 img1"
+        "img2 img3";
+    }
+}
+@media screen and (min-width: 880px) {
+    .content{
+        grid-template-areas: 
+        "text text"
+        "main main"
+        "scrol swiper"
+        "recent recent"
+        "footer footer";
+        grid-template-columns: 3fr 1fr;
+        gap: 1rem;
+    }
+    .content .text-content{
+        grid-area: text;
+    }
+    .main{
+        grid-area: main;
+        grid-template-areas: 
+        "img1 img2"
+        "img1 img3";
+        grid-template-columns: 2fr 1fr;
+    }
+    .main .img-container{
+        min-height: 200px;
+    }
+    .swiper{
+        grid-area: swiper;
+        margin: 0;
+        width: 300px;
+    }
+    .swiper::after{
+        display: none;
+    }
+    .swiper h2{
+        margin-top: 0;
+    }
+    .swiper .wrapper{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        margin-top: 2rem;
+    }
+    .swiper .wrapper .img-container{
+        object-fit: none;
+        width: 300px;
+        height: 270px;
+    }
+    .recents{
+        grid-area: recent
+    }
+    footer{
+        grid-area: footer
+    }
+    .scroll{
+        max-width: 780px;
+        grid-area: scrol;
+        grid-template-columns: 1fr;
+        gap: 3rem 2rem;
+        margin: 0;
+        max-height: 1140px;
+        overflow-x: hidden;
+        margin-bottom: 4rem;
+    }
+    .scroll .card{
+        max-width: 670px;
+        grid-template-columns: 1fr 2fr;
+        grid-auto-rows: 200px;
+        align-items: center;
+        gap: 1rem;
+    }
+    .scroll .card .text p{
+        margin: 0.5rem 0;
+        margin-bottom: 1rem;
+    }
+    .scroll .card .img-container{
+        min-height: 200px;
+        margin: 1rem 0;
+        grid-column: 1 / 2;
+        grid-row: 1;
+    }
+    .scroll .card .text{
+        grid-column: 2 /3;
+    }
+    .scroll .card .text h2{
+        font-size: 1rem;
+    }
+    .scroll .card .text p{
+        font-size: 12px;
+    }
+    .scroll .card .img-container .button{
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        height: 22px;
+    }
+} 

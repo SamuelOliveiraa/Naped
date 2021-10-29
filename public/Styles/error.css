@@ -1,0 +1,77 @@
+html, body{
+    min-width: 100vw;
+    min-height: 100vh;
+}
+.container-grid{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.main{
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    justify-content: center;
+    align-content: center;
+}
+.main .container{
+    height: 300px;
+}
+.main .img-container{
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.main .img-container img{
+    position: static;
+}
+.main .container .text{
+    display: block;
+    padding: 0;
+    max-width: 280px;
+    height: 40px;
+    text-align: center;
+    color: var(--gray);
+}
+.main .text{
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.main .text p{
+    margin: 1rem 0;
+    line-height: 30px;
+} 
+.main .text .button{
+    width: 140px;
+    padding: 8px;
+    font-size: 1rem;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 700px){
+    .main{
+        margin-top: 0;
+        height: 100vh;
+        grid-template-areas: 
+        "text container";
+        grid-template-columns: repeat(auto-fill, minmax(300px ,400px));
+        align-items: center;
+        justify-content: space-between;
+    }
+    .main .container{
+        grid-area: container;
+    }
+    .main .text{
+        grid-area: text;
+        text-align: left;
+    }
+    .main .text h1{
+        font-size: 40px;
+    }
+    .main .text .button{
+        margin: 0;
+    }
+
+}
